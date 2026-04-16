@@ -206,12 +206,12 @@ export default function Projects() {
           </button>
         </motion.div>
 
-        <div className="relative">
+        <div className="relative overflow-x-visible">
           <motion.div
             ref={carouselRef}
             onWheelCapture={handleCarouselWheel}
             variants={cardsContainerVariants}
-            className="flex gap-4 md:gap-6 overflow-x-auto overflow-y-visible overscroll-contain snap-x snap-mandatory pt-4 pb-6 px-1 md:pr-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden [&>*]:min-w-[84vw] sm:[&>*]:min-w-[280px] md:[&>*]:min-w-[330px] [&>*]:max-w-[360px] [&>*]:shrink-0 [&>*]:snap-start"
+            className="flex gap-4 md:gap-6 overflow-x-auto overflow-y-visible overscroll-contain snap-x snap-mandatory pt-4 pb-6 px-0 md:px-1 md:pr-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden [&>*]:w-full [&>*]:min-w-full sm:[&>*]:min-w-[280px] md:[&>*]:min-w-[330px] md:[&>*]:max-w-[360px] sm:[&>*]:w-auto [&>*]:shrink-0 [&>*]:snap-start"
           >
             {loopedProjects.map((project, idx) => (
               <ProjectCard

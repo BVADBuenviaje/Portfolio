@@ -43,8 +43,6 @@ const experiences = [
 export default function Experience() {
   const cardsContainerRef = useRef(null);
 
-
-
   return (
     <section
       id="experience"
@@ -54,7 +52,7 @@ export default function Experience() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.35 }}
+        viewport={{ once: false, amount: 0.1 }}
         className="max-w-6xl w-full"
       >
         <motion.p variants={itemVariants} className="text-retro-green text-xl mb-2">
