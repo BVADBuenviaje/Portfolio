@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: "PROJECTS", href: "#projects-header" },
   { label: "CONTACT", href: "#contact" },
 ];
-const RESUME_HREF = "/Buenviaje-Resume.pdf";
+const RESUME_HREF = "/Resume.pdf";
 
 function RainToggleIcon({ on }) {
   if (on) {
