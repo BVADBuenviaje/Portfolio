@@ -1,0 +1,13 @@
+
+.experience-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-highlight {
+  position: relative;
+}
+
+.experience-card__media {
+  transition: border-color 0.2s ease;
+}
