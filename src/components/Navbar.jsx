@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: "PROJECTS", href: "#projects-header" },
   { label: "CONTACT", href: "#contact" },
 ];
-const RESUME_HREF = "/resume.pdf";
+const RESUME_HREF = "/Buenviaje-Resume.pdf";
 
 function RainToggleIcon({ on }) {
   if (on) {
@@ -192,9 +192,11 @@ export default function Navbar({ rainEnabled = true, onRainToggle }) {
               onClick={handleResumeClick}
               onMouseEnter={playHoverSfx}
               className="group flex items-center text-retro-green text-xl hover:text-white transition-colors duration-200"
+              id="resume-btn-anchor"
+              style={{ position: "relative", zIndex: 51 }}
             >
               <span
-                className="inline-block w-0 overflow-hidden group-hover:w-5 transition-all duration-200 text-sm leading-none"
+                className="inline-block w-5 text-sm leading-none transition-opacity duration-200 group-hover:opacity-100 opacity-0"
                 style={{ imageRendering: "pixelated" }}
               >
                 ▶
@@ -204,39 +206,40 @@ export default function Navbar({ rainEnabled = true, onRainToggle }) {
                 <path d="M12 3a1 1 0 011 1v8.59l2.3-2.3a1 1 0 111.4 1.42l-4 3.99a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.41L11 12.58V4a1 1 0 011-1zm-7 14a1 1 0 011 1v1h12v-1a1 1 0 112 0v2a1 1 0 01-1 1H5a1 1 0 01-1-1v-2a1 1 0 011-1z" />
               </svg>
             </button>
-          </div>
 
-          <AnimatePresence>
-            {showResumeConfirm && (
-              <motion.div
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className="hidden md:block absolute right-6 top-full mt-2 border-2 border-retro-green bg-black p-3 w-64"
-              >
-                <p className="text-retro-green text-sm mb-3">Download attached resume?</p>
-                <div className="flex justify-end gap-2">
-                  <button
-                    type="button"
-                    onClick={handleDownloadResume}
-                    onMouseEnter={playHoverSfx}
-                    className="border border-retro-green text-retro-green px-3 py-1 text-sm hover:bg-retro-green hover:text-black transition-colors duration-200"
-                  >
-                    Yes
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setShowResumeConfirm(false)}
-                    onMouseEnter={playHoverSfx}
-                    className="border border-retro-green/60 text-retro-green/80 px-3 py-1 text-sm hover:border-retro-green hover:text-retro-green transition-colors duration-200"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+            <AnimatePresence>
+              {showResumeConfirm && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute left-0 top-full mt-2 border-2 border-retro-green bg-black p-3 w-64 z-[52]"
+                  style={{ minWidth: 'max-content' }}
+                >
+                  <p className="text-retro-green text-sm mb-3">Download attached resume?</p>
+                  <div className="flex justify-end gap-2">
+                    <button
+                      type="button"
+                      onClick={handleDownloadResume}
+                      onMouseEnter={playHoverSfx}
+                      className="border border-retro-green text-retro-green px-3 py-1 text-sm hover:bg-retro-green hover:text-black transition-colors duration-200"
+                    >
+                      Yes
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setShowResumeConfirm(false)}
+                      onMouseEnter={playHoverSfx}
+                      className="border border-retro-green/60 text-retro-green/80 px-3 py-1 text-sm hover:border-retro-green hover:text-retro-green transition-colors duration-200"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         <AnimatePresence>
