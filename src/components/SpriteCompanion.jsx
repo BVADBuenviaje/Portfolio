@@ -53,9 +53,8 @@ export default function SpriteCompanion() {
   if (!mounted || typeof document === "undefined") return null;
 
   const companionContent = (
-    <div className="fixed top-0 left-0 w-screen h-[100dvh] pointer-events-none z-[60]">
+    <div className={`fixed top-0 left-0 w-screen h-[100dvh] pointer-events-none z-[60] ${isMobile ? 'mobile-sticky-sprite' : ''}`}>
       <div className="absolute bottom-[max(0.5rem,env(safe-area-inset-bottom))] -left-2 md:-bottom-8 md:left-0 flex items-end gap-0 transition-transform duration-200">
-        
         {/* Sprite */}
         <div className="relative pointer-events-auto">
           <div
